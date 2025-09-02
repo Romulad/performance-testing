@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Service Company</title>
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>SpeedPro Performance Services</h1>
+        <div class="nav">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+               <a href="#testimonials">Testimonials</a>
+               <a href="#case-studies">Case Studies</a>
+               <a href="#team">Team</a>
+               <a href="#faq">FAQ</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-text">
+            <h2>Accelerate Your Business</h2>
+            <p>We help companies achieve lightning-fast web performance, robust scalability, and seamless user experiences. Our experts analyze, optimize, and deliver results for your digital platforms.</p>
+        </div>
+        <div class="hero-img">
+            <img src="{% static 'main/img/performance.jpg' %}" alt="Performance Service">
+        </div>
+    </div>
+    <div class="sections">
+        <div class="section" id="services">
+            <h3>Our Services</h3>
+            <ul>
+                <li>Web Performance Audits</li>
+                <li>Load & Stress Testing</li>
+                <li>Scalability Consulting</li>
+                <li>CDN & Caching Solutions</li>
+                <li>Custom Monitoring Dashboards</li>
+            </ul>
+        </div>
+        <div class="section" id="about">
+            <h3>About Us</h3>
+            <p>SpeedPro is a team of engineers passionate about speed. With 10+ years of experience, we’ve helped startups and enterprises unlock their full potential online.</p>
+        </div>
+        <div class="section" id="contact">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:info@speedpro.com">info@speedpro.com</a></p>
+            <p>Phone: +1 555-123-4567</p>
+        </div>
+            <div class="section" id="testimonials">
+                <h3>Testimonials</h3>
+                <blockquote>“SpeedPro transformed our website’s performance. Our users noticed the difference instantly!”<br><span>- Tech Startup CEO</span></blockquote>
+                <blockquote>“Their team is knowledgeable, responsive, and results-driven.”<br><span>- Enterprise CTO</span></blockquote>
+            </div>
+            <div class="section" id="case-studies">
+                <h3>Case Studies</h3>
+                <ul>
+                    <li><strong>Retail Giant:</strong> Improved page load time by 60%, resulting in 30% higher conversion rates.</li>
+                    <li><strong>Fintech Startup:</strong> Scaled infrastructure to handle 10x traffic during product launch.</li>
+                </ul>
+            </div>
+            <div class="section" id="team">
+                <h3>Meet the Team</h3>
+                <div class="team-members">
+                    <div class="member">
+                        <strong>Jane Doe</strong> – Lead Performance Engineer
+                    </div>
+                    <div class="member">
+                        <strong>John Smith</strong> – Scalability Specialist
+                    </div>
+                    <div class="member">
+                        <strong>Emily Lee</strong> – UX Optimization Expert
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="faq">
+                <h3>FAQ</h3>
+                <ul>
+                    <li><strong>How do I get started?</strong> Contact us for a free initial consultation.</li>
+                    <li><strong>What industries do you serve?</strong> We work with e-commerce, finance, SaaS, and more.</li>
+                    <li><strong>Can you help with legacy systems?</strong> Yes, we specialize in optimizing both modern and legacy platforms.</li>
+                </ul>
+            </div>
+                <div class="section" id="process">
+                    <h3>Our Process</h3>
+                    <ol>
+                        <li><strong>Audit:</strong> In-depth analysis of your current performance.</li>
+                        <li><strong>Optimize:</strong> Implement best practices and custom solutions.</li>
+                        <li><strong>Monitor:</strong> Continuous tracking and improvement.</li>
+                    </ol>
+                </div>
+                <div class="section" id="technologies">
+                    <h3>Technologies We Use</h3>
+                    <ul>
+                        <li>Django</li>
+                        <li>React</li>
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                        <li>NGINX</li>
+                        <li>Docker</li>
+                        <li>AWS & Azure</li>
+                    </ul>
+                </div>
+                <div class="section" id="blog">
+                    <h3>Blog Highlights</h3>
+                    <ul>
+                        <li><a href="#">5 Tips for Faster Web Apps</a></li>
+                        <li><a href="#">Scaling Django for Millions</a></li>
+                        <li><a href="#">Choosing the Right CDN</a></li>
+                    </ul>
+                </div>
+                <div class="section" id="partners">
+                    <h3>Partners & Clients</h3>
+                    <div class="partners">
+                        <span>Acme Corp</span> | <span>FinTechX</span> | <span>ShopSmart</span> | <span>EduPro</span>
+                    </div>
+                </div>
+                <div class="section" id="cta">
+                    <h3>Ready to Accelerate?</h3>
+                    <a href="#contact" class="cta-btn">Get a Quote</a>
+                    <a href="#contact" class="cta-btn">Request Demo</a>
+                </div>
+                <div class="section" id="newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form method="post" action="#">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="section" id="awards">
+                    <h3>Awards & Certifications</h3>
+                    <ul>
+                        <li>Best Web Performance Agency 2024</li>
+                        <li>Django Certified Partner</li>
+                        <li>AWS Advanced Consulting Partner</li>
+                    </ul>
+                </div>
+                <div class="section" id="location">
+                    <h3>Our Location</h3>
+                    <p>123 SpeedPro Ave, Tech City, USA</p>
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.09%2C51.505%2C-0.08%2C51.506&amp;layer=mapnik" style="width:100%;height:200px;border:none;"></iframe>
+                </div>
+                <div class="section" id="social">
+                    <h3>Connect With Us</h3>
+                    <a href="#"><img src="{% static 'main/img/facebook.png' %}" alt="Facebook" style="height:32px;"></a>
+                    <a href="#"><img src="{% static 'main/img/twitter.png' %}" alt="Twitter" style="height:32px;"></a>
+                    <a href="#"><img src="{% static 'main/img/linkedin.png' %}" alt="LinkedIn" style="height:32px;"></a>
+                </div>
+                <div class="section" id="careers">
+                    <h3>Careers</h3>
+                    <p>We’re hiring! If you’re passionate about performance and scalability, <a href="#contact">contact us</a> to join our team.</p>
+                </div>
+    </div>
+    <div class="footer">
+        &copy; 2025 SpeedPro Performance Services. All rights reserved.
+    </div>
+</body>
+</html>
