@@ -1,5 +1,13 @@
 import time
 
+
+def performance_timer(get_response, request):
+    start = time.perf_counter()
+    response = get_response(request)
+    elapsed = (time.perf_counter() - start) * 1000  # ms
+    return response, elapsed
+
+
 class ProcessingTimeMiddleware:
     """
     Middleware that measures and adds the total request processing time 
@@ -9,9 +17,7 @@ class ProcessingTimeMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        total_start = time.perf_counter()
-        response = self.get_response(request)
-        total_elapsed = (time.perf_counter() - total_start) * 1000  # ms
+        response, total_elapsed = performance_timer(self.get_response, request)
         response['X-Total-Processing-Time'] = f'{total_elapsed:.2f}ms'
         return response
 
@@ -25,8 +31,6 @@ class ViewProcessingTimeMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        view_start = time.perf_counter()
-        response = self.get_response(request)
-        view_elapsed = (time.perf_counter() - view_start) * 1000  # ms
+        response, view_elapsed = performance_timer(self.get_response, request)
         response['X-View-Processing-Time'] = f'{view_elapsed:.2f}ms'
         return response
