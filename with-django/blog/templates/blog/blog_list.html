@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} - SpeedPro Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e3e7ed 100%);
+            margin: 0;
+            padding: 0;
+            color: #222;
+            line-height: 1.6;
+        }
+        .header {
+            background: #2d3748;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        .stats {
+            background: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .article-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        .article-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0 0 0.5rem 0;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+        .article-tag {
+            background: #4299e1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .article-date {
+            font-style: italic;
+        }
+        .article-description {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            color: #666;
+            font-size: 0.9rem;
+            max-height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        .article-content::after {
+            content: '...';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(to right, transparent, #fff 50%);
+            padding-left: 20px;
+        }
+        .footer {
+            background: #2d3748;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .loading-info {
+            background: #e6fffa;
+            border: 1px solid #81e6d9;
+            color: #234e52;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SpeedPro Blog</h1>
+        <p>Performance Testing & Web Development Articles</p>
+    </div>
+    
+    <div class="stats">
+        <h2>📊 Performance Test: Rendering {{ total_count }} Blog Posts</h2>
+        <p>This page demonstrates Django template rendering performance with database queries</p>
+    </div>
+
+    <div class="container">
+        <div class="loading-info">
+            <strong>🚀 Performance Metrics:</strong> Check the response headers for timing information:
+            <br>• X-Total-Processing-Time • X-DB-Query-Time • X-DB-Query-Count • X-View-Processing-Time
+        </div>
+
+        <div class="articles-grid">
+            {% for article in articles %}
+            <div class="article-card">
+                <h3 class="article-title">{{ article.title }}</h3>
+                
+                <div class="article-meta">
+                    <span class="article-tag">{{ article.tag }}</span>
+                    <span class="article-date">{{ article.date|date:"M d, Y" }}</span>
+                </div>
+                
+                <p class="article-description">{{ article.description }}</p>
+                
+                <div class="article-content">
+                    {{ article.content|truncatewords:30 }}
+                </div>
+            </div>
+            {% empty %}
+            <div class="article-card">
+                <h3 class="article-title">No Articles Found</h3>
+                <p class="article-description">No blog posts are available at the moment.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 SpeedPro Performance Services. Performance Testing Demo.</p>
+        <p>Total Articles Rendered: <strong>{{ total_count }}</strong></p>
+    </div>
+</body>
+</html>

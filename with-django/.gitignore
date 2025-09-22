@@ -30,6 +30,10 @@ Thumbs.db
 */migrations/*.pyo
 */migrations/*.log
 
+# Environment variables
+env
+.env
+
 # Other
 *.swp
 *.bak
